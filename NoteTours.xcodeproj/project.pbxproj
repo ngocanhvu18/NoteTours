@@ -7,21 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00134E1D7CCD930DFF520B22 /* Pods_NoteTours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6AD820D46E90326EC0AC93F /* Pods_NoteTours.framework */; };
+		2F071CC920E4D488008B33FC /* DataServicePlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F071CC820E4D488008B33FC /* DataServicePlist.swift */; };
+		2F071CCB20E4D663008B33FC /* CitysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F071CCA20E4D663008B33FC /* CitysViewController.swift */; };
+		2F26EAC420E5C039008CD54C /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F26EAC320E5C039008CD54C /* Cities.plist */; };
+		2F26EAC620E5C318008CD54C /* DistrictsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F26EAC520E5C318008CD54C /* DistrictsViewController.swift */; };
+		2F26EAC820E5C33D008CD54C /* Districst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F26EAC720E5C33D008CD54C /* Districst.swift */; };
 		2F681F4720E4C67A001F78C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F681F4620E4C67A001F78C9 /* AppDelegate.swift */; };
-		2F681F4920E4C67A001F78C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F681F4820E4C67A001F78C9 /* ViewController.swift */; };
 		2F681F4C20E4C67A001F78C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F681F4A20E4C67A001F78C9 /* Main.storyboard */; };
 		2F681F4E20E4C67A001F78C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F681F4D20E4C67A001F78C9 /* Assets.xcassets */; };
 		2F681F5120E4C67A001F78C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F681F4F20E4C67A001F78C9 /* LaunchScreen.storyboard */; };
+		2F681F5B20E4CC6E001F78C9 /* PlistServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F681F5A20E4CC6E001F78C9 /* PlistServices.swift */; };
+		2F681F5D20E4CC77001F78C9 /* Districts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F681F5C20E4CC77001F78C9 /* Districts.plist */; };
+		2F681F6220E4CD1D001F78C9 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F681F6120E4CD1D001F78C9 /* City.swift */; };
+		2FA345E620EA17F500708C63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FA345E520EA17F500708C63 /* GoogleService-Info.plist */; };
+		2FA345E820EA20C100708C63 /* DataFireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA345E720EA20C100708C63 /* DataFireBase.swift */; };
+		2FA6F1C920E769AF0076928D /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA6F1C820E769AF0076928D /* UIView+Extentions.swift */; };
+		2FC90F1820E6444B00C29A01 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC90F1720E6444B00C29A01 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F071CC820E4D488008B33FC /* DataServicePlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServicePlist.swift; sourceTree = "<group>"; };
+		2F071CCA20E4D663008B33FC /* CitysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitysViewController.swift; sourceTree = "<group>"; };
+		2F26EAC320E5C039008CD54C /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
+		2F26EAC520E5C318008CD54C /* DistrictsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictsViewController.swift; sourceTree = "<group>"; };
+		2F26EAC720E5C33D008CD54C /* Districst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Districst.swift; sourceTree = "<group>"; };
 		2F681F4320E4C67A001F78C9 /* NoteTours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteTours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F681F4620E4C67A001F78C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F681F4820E4C67A001F78C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F681F4B20E4C67A001F78C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F681F4D20E4C67A001F78C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F681F5020E4C67A001F78C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F681F5220E4C67A001F78C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F681F5A20E4CC6E001F78C9 /* PlistServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistServices.swift; sourceTree = "<group>"; };
+		2F681F5C20E4CC77001F78C9 /* Districts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Districts.plist; sourceTree = "<group>"; };
+		2F681F6120E4CD1D001F78C9 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		2FA345E520EA17F500708C63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2FA345E720EA20C100708C63 /* DataFireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFireBase.swift; sourceTree = "<group>"; };
+		2FA6F1C820E769AF0076928D /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
+		2FC90F1720E6444B00C29A01 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2FF84AF220EB166100884ED2 /* NoteTours.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoteTours.entitlements; sourceTree = "<group>"; };
+		62EDEAC1FEA62A9A1F4B8B0E /* Pods-NoteTours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteTours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteTours/Pods-NoteTours.debug.xcconfig"; sourceTree = "<group>"; };
+		A4FC33150007E83477C9149F /* Pods-NoteTours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteTours.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteTours/Pods-NoteTours.release.xcconfig"; sourceTree = "<group>"; };
+		D6AD820D46E90326EC0AC93F /* Pods_NoteTours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteTours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +56,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00134E1D7CCD930DFF520B22 /* Pods_NoteTours.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0362E9C3BF1CE99EA415CC13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				62EDEAC1FEA62A9A1F4B8B0E /* Pods-NoteTours.debug.xcconfig */,
+				A4FC33150007E83477C9149F /* Pods-NoteTours.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2F26EACB20E5D0AC008CD54C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2F681F3A20E4C67A001F78C9 = {
 			isa = PBXGroup;
 			children = (
 				2F681F4520E4C67A001F78C9 /* NoteTours */,
 				2F681F4420E4C67A001F78C9 /* Products */,
+				0362E9C3BF1CE99EA415CC13 /* Pods */,
+				3A1E12B7C8444063675C7924 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +100,67 @@
 		2F681F4520E4C67A001F78C9 /* NoteTours */ = {
 			isa = PBXGroup;
 			children = (
+				2FF84AF220EB166100884ED2 /* NoteTours.entitlements */,
 				2F681F4620E4C67A001F78C9 /* AppDelegate.swift */,
-				2F681F4820E4C67A001F78C9 /* ViewController.swift */,
-				2F681F4A20E4C67A001F78C9 /* Main.storyboard */,
+				2FA6F1C720E768BD0076928D /* Support */,
+				2F26EACB20E5D0AC008CD54C /* View */,
+				2F681F5920E4CC4A001F78C9 /* Model */,
+				2F681F5820E4CC34001F78C9 /* Controller */,
 				2F681F4D20E4C67A001F78C9 /* Assets.xcassets */,
+				2F681F4A20E4C67A001F78C9 /* Main.storyboard */,
 				2F681F4F20E4C67A001F78C9 /* LaunchScreen.storyboard */,
 				2F681F5220E4C67A001F78C9 /* Info.plist */,
+				2FA345E520EA17F500708C63 /* GoogleService-Info.plist */,
 			);
 			path = NoteTours;
+			sourceTree = "<group>";
+		};
+		2F681F5820E4CC34001F78C9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2FC90F1720E6444B00C29A01 /* HomeViewController.swift */,
+				2F071CCA20E4D663008B33FC /* CitysViewController.swift */,
+				2F26EAC520E5C318008CD54C /* DistrictsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F681F5920E4CC4A001F78C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F681F6020E4CC92001F78C9 /* FilePlist */,
+				2FA345E720EA20C100708C63 /* DataFireBase.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F681F6020E4CC92001F78C9 /* FilePlist */ = {
+			isa = PBXGroup;
+			children = (
+				2F681F6120E4CD1D001F78C9 /* City.swift */,
+				2F26EAC720E5C33D008CD54C /* Districst.swift */,
+				2F071CC820E4D488008B33FC /* DataServicePlist.swift */,
+				2F681F5A20E4CC6E001F78C9 /* PlistServices.swift */,
+				2F26EAC320E5C039008CD54C /* Cities.plist */,
+				2F681F5C20E4CC77001F78C9 /* Districts.plist */,
+			);
+			path = FilePlist;
+			sourceTree = "<group>";
+		};
+		2FA6F1C720E768BD0076928D /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				2FA6F1C820E769AF0076928D /* UIView+Extentions.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		3A1E12B7C8444063675C7924 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6AD820D46E90326EC0AC93F /* Pods_NoteTours.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F681F5520E4C67A001F78C9 /* Build configuration list for PBXNativeTarget "NoteTours" */;
 			buildPhases = (
+				7C973857EC8DC1B25BB0F19F /* [CP] Check Pods Manifest.lock */,
 				2F681F3F20E4C67A001F78C9 /* Sources */,
 				2F681F4020E4C67A001F78C9 /* Frameworks */,
 				2F681F4120E4C67A001F78C9 /* Resources */,
+				4EEB0FEC0415A24557C29191 /* [CP] Copy Pods Resources */,
+				3C2DB7E9F9A2A60B8B17F3D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -97,6 +199,11 @@
 					2F681F4220E4C67A001F78C9 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -125,19 +232,109 @@
 			files = (
 				2F681F5120E4C67A001F78C9 /* LaunchScreen.storyboard in Resources */,
 				2F681F4E20E4C67A001F78C9 /* Assets.xcassets in Resources */,
+				2F26EAC420E5C039008CD54C /* Cities.plist in Resources */,
+				2F681F5D20E4CC77001F78C9 /* Districts.plist in Resources */,
 				2F681F4C20E4C67A001F78C9 /* Main.storyboard in Resources */,
+				2FA345E620EA17F500708C63 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C2DB7E9F9A2A60B8B17F3D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NoteTours/Pods-NoteTours-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NoteTours/Pods-NoteTours-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EEB0FEC0415A24557C29191 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NoteTours/Pods-NoteTours-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NoteTours/Pods-NoteTours-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C973857EC8DC1B25BB0F19F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NoteTours-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F681F3F20E4C67A001F78C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F681F4920E4C67A001F78C9 /* ViewController.swift in Sources */,
+				2FA6F1C920E769AF0076928D /* UIView+Extentions.swift in Sources */,
 				2F681F4720E4C67A001F78C9 /* AppDelegate.swift in Sources */,
+				2F26EAC820E5C33D008CD54C /* Districst.swift in Sources */,
+				2F681F6220E4CD1D001F78C9 /* City.swift in Sources */,
+				2FA345E820EA20C100708C63 /* DataFireBase.swift in Sources */,
+				2F681F5B20E4CC6E001F78C9 /* PlistServices.swift in Sources */,
+				2FC90F1820E6444B00C29A01 /* HomeViewController.swift in Sources */,
+				2F071CCB20E4D663008B33FC /* CitysViewController.swift in Sources */,
+				2F26EAC620E5C318008CD54C /* DistrictsViewController.swift in Sources */,
+				2F071CC920E4D488008B33FC /* DataServicePlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,12 +469,16 @@
 		};
 		2F681F5620E4C67A001F78C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62EDEAC1FEA62A9A1F4B8B0E /* Pods-NoteTours.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NoteTours/NoteTours.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z86K4NCSAW;
 				INFOPLIST_FILE = NoteTours/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = NA.NoteTours;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NA.NoteTours;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -286,12 +487,16 @@
 		};
 		2F681F5720E4C67A001F78C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4FC33150007E83477C9149F /* Pods-NoteTours.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NoteTours/NoteTours.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z86K4NCSAW;
 				INFOPLIST_FILE = NoteTours/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = NA.NoteTours;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NA.NoteTours;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

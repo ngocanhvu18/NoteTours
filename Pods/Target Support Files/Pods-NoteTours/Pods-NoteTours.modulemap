@@ -1,0 +1,6 @@
+framework module Pods_NoteTours {
+  umbrella header "Pods-NoteTours-umbrella.h"
+
+  export *
+  module * { export * }
+}
