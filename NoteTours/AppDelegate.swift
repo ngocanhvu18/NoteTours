@@ -18,11 +18,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-       
+
+        
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyASjHwhY3NTN0lvSz9aUmcQkVBf1FJX_DU")
         GMSPlacesClient.provideAPIKey("AIzaSyASjHwhY3NTN0lvSz9aUmcQkVBf1FJX_DU")
         FirebaseApp.configure()
+        
+        if UserDefaults.standard.object(forKey: "FirstLogin") == nil {
+            UserDefaults.standard.set(true, forKey: "FirstLogin")
+        }
+        
+        if !UserDefaults.standard.bool(forKey: "FirstLogin") {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
+            
+            window?.rootViewController = loginVC
+        }
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

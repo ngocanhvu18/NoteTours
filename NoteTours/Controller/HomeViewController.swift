@@ -10,9 +10,12 @@ import UIKit
 import FBSDKLoginKit
 import FacebookLogin
 
-class HomeViewController: UIViewController, UIScrollViewDelegate {
+class HomeViewController: UIViewController {
     
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var loginView: UIView!
+
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     let fbLoginManager: FBSDKLoginManager = FBSDKLoginManager()
     
     override func viewDidLoad() {
@@ -21,28 +24,44 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let email = UserDefaults.standard.value(forKey: "email") as? String {
+            loading.startAnimating()
+            if email == "ngocanhvu18ict@gmail.com" {
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.loadViewController()
+                }
+                
+            } else {
+                containerView.isHidden = false
+            }
+            loading.stopAnimating()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
-        pageControl.currentPage = Int(pageNumber)
-    }
+    
     // Login FaceBook.
     func getFBUserData(){
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if error == nil {
-                    print(result)
-                    if let userData = result as? DICT {
+                    if let userData = result as? DIC {
                         if  let email = userData["email"] as? String,
                             let name = userData["name"] as? String,
-                            let picture = userData["picture"] as? DICT,
-                            let data = picture["data"] as? DICT,
+                            let picture = userData["picture"] as? DIC,
+                            let data = picture["data"] as? DIC,
                             let url = data["url"] as? String {
-                            print(email, name, url)
-                            
+                            UserDefaults.standard.set(email, forKey: "email")
+                            UserDefaults.standard.set(name, forKey: "name")
+                            UserDefaults.standard.set(url, forKey: "url")
+                            UserDefaults.standard.set(true, forKey: "FirstLogin")
+                            self.loadViewController()
                         }
                     }
                 }
@@ -59,20 +78,17 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                         self.getFBUserData()
                     }
                 }
+                
             } else {
                 print("Login that bai")
             }
         }
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    func loadViewController() {
+        let storyboar = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarControllrt = storyboar.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+        present(tabBarControllrt, animated: true, completion: nil)
+    }
+
 }

@@ -79,7 +79,7 @@ DEPENDENCIES:
   - GooglePlaces
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Bolts
     - FacebookCore
     - FacebookLogin
@@ -123,4 +123,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: cc9e90590ba4c8f62fa598c913603fac3c02505a
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0

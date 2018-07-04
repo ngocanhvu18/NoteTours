@@ -49,8 +49,10 @@ class CitysViewController: UITableViewController, UISearchBarDelegate {
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         dataCitys = searchText.isEmpty ? DataService.shared.cities : DataService.shared.cities.filter({ (city: City) -> Bool in
-            return city.name.lowercased().contains(searchText.lowercased())
+//            return city.name.lowercased().contains(searchText.lowercased())
+            return (city.name.range(of: searchText, options: .diacriticInsensitive, range: nil, locale: nil) != nil) 
         })
+        
         tableView.reloadData()
     }
     
