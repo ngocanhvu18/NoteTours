@@ -16,6 +16,7 @@ fileprivate class Keys {
 @IBDesignable class DesignButton: UIButton {}
 @IBDesignable class DesignView: UIView {}
 @IBDesignable class DesignText : UITextField {}
+@IBDesignable class DesignImage : UIImageView {}
 extension UIView {
     
     @IBInspectable var cornerRadius: CGFloat {

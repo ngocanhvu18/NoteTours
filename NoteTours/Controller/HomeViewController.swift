@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var loginView: UIView!
 
     @IBOutlet weak var loading: UIActivityIndicatorView!
+    
     let fbLoginManager: FBSDKLoginManager = FBSDKLoginManager()
     
     override func viewDidLoad() {
@@ -36,9 +37,13 @@ class HomeViewController: UIViewController {
                 
             } else {
                 containerView.isHidden = false
+                  loading.stopAnimating()
             }
-            loading.stopAnimating()
+        } else {
+            containerView.isHidden = false
+            
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,7 +65,7 @@ class HomeViewController: UIViewController {
                             UserDefaults.standard.set(email, forKey: "email")
                             UserDefaults.standard.set(name, forKey: "name")
                             UserDefaults.standard.set(url, forKey: "url")
-                            UserDefaults.standard.set(true, forKey: "FirstLogin")
+                            UserDefaults.standard.set(false, forKey: "FirstLogin")
                             self.loadViewController()
                         }
                     }

@@ -7,59 +7,123 @@
 //
 
 import Foundation
+enum Regions: String {
+    case nortArea = "I. Địa điểm phượt ở miền Bắc"
+    case centralArea = "II. Địa điểm phượt ở miền Trung"
+    case southArea = "III. Địa điểm phượt miền Nam"
+    case westArea = "IV. Địa điểm phượt miền Tây"
+    
+    static func fromHashValue(hashValue: Int) -> Regions? {
+        switch hashValue {
+        case 0:
+            return .nortArea
+        case 1:
+            return .centralArea
+        case 2:
+            return .southArea
+        case 3:
+            return .westArea
+        default:
+            return nil
+        }
+    }
+}
 
 class DataService {
     
     static let shared : DataService = DataService()
-    var cityCode : Int?
     
-    // Cities
-    private var _cities: [City]?
-    var cities: [City] {
-        get {
-            if _cities == nil {
-                getDataCities()
+    private var _placesFirst: [Places]?
+    var placesFirst: [Places] {
+        get{
+            if _placesFirst == nil {
+                getPlacesFirst()
             }
-            return _cities ?? []
+            return _placesFirst ?? []
         }
-        set {
-            _cities = newValue
+        set{
+            _placesFirst = newValue
         }
     }
-    
-    func getDataCities() {
-        _cities = []
-        guard let dictionary = PlistService().getDataPlist(plist: "Cities.plist") else { return }
-        guard let cityDictionaries = dictionary["Cities"] as? [DIC] else { return}
-        for cityDictionary in cityDictionaries {
-            if let city = City(dictionary: cityDictionary) {
-                _cities?.append(city)
+    func getPlacesFirst()  {
+        _placesFirst = []
+        guard let dictionary = PlistService().getDataPlist(plist: "PlacesVietnam.plist") else { return  }
+        guard let placesData = dictionary["I. Địa điểm phượt ở miền Bắc"] as? [DIC] else { return  }
+        for dataPlaces in placesData {
+            if let placesObject = Places (dictionary: dataPlaces) {
+                _placesFirst?.append(placesObject)
             }
         }
     }
-    // Districts
-    private var _districts: [Districts]?
-    var distrists: [Districts] {
-        get {
-            if _districts == nil {
-                getDataDistricts()
+   //secondView
+    private var _placesSecond: [Places]?
+    var placesSecond: [Places] {
+        get{
+            if _placesSecond == nil {
+                getPlacesSecond()
             }
-            return _districts?.filter { $0.cityCode == self.cityCode } ?? []
+            return _placesSecond ?? []
         }
-        set {
-            _districts = newValue
+        set{
+            _placesSecond = newValue
         }
     }
-    
-    
-    func getDataDistricts() {
-        _districts = []
-        guard let dictionary = PlistService().getDataPlist(plist: "Districts.plist") else { return  }
-        guard let districtDictionaries = dictionary["Districts"] as? [DIC] else { return  }
-        for districtsDictionary in districtDictionaries{
-            if let district = Districts(dictionary: districtsDictionary) {
-                _districts? .append(district)
+    func getPlacesSecond()  {
+        _placesSecond = []
+        guard let dictionary = PlistService().getDataPlist(plist: "PlacesVietnam.plist") else { return  }
+        guard let placesData = dictionary["II. Địa điểm phượt ở miền Trung"] as? [DIC] else { return  }
+        for dataPlaces in placesData {
+            if let placesObject = Places(dictionary: dataPlaces) {
+                _placesSecond?.append(placesObject)
             }
         }
     }
-}
+    //thirdView
+    private var _placesThird: [Places]?
+    var placesThird: [Places] {
+        get{
+            if _placesThird == nil {
+                getPlacesThird()
+            }
+            return _placesThird ?? []
+        }
+        set{
+            _placesThird = newValue
+        }
+    }
+    func getPlacesThird()  {
+        _placesThird = []
+        guard let dictionary = PlistService().getDataPlist(plist: "PlacesVietnam.plist") else { return  }
+        guard let placesData = dictionary["III. Địa điểm phượt miền Nam"] as? [DIC] else { return  }
+        for dataPlaces in placesData {
+            if let placesObject = Places(dictionary: dataPlaces) {
+                _placesThird?.append(placesObject)
+            }
+        }
+    }
+    //forthView
+    private var _placesForth: [Places]?
+    var placesForth: [Places] {
+        get{
+            if _placesForth == nil {
+                getPlacesForth()
+            }
+            return _placesForth ?? []
+        }
+        set{
+            _placesForth = newValue
+        }
+    }
+    func getPlacesForth() {
+        _placesForth = []
+        guard let dictionary = PlistService().getDataPlist(plist: "PlacesVietnam.plist") else { return  }
+        guard let placesData = dictionary["IV. Địa điểm phượt miền Tây"] as? [DIC] else { return  }
+        for dataPlaces in placesData {
+            if let placesObject = Places(dictionary: dataPlaces) {
+                _placesForth?.append(placesObject)
+            }
+        }
+    }
+    }
+
+
