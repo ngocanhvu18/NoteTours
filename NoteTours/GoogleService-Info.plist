@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>986832910842-u140gpgba3c1oivog6rl0dr8iakj3bu5.apps.googleusercontent.com</string>
+	<string>908122768990-n34r7nfcrf500hbrpeiiso70viijleed.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.986832910842-u140gpgba3c1oivog6rl0dr8iakj3bu5</string>
+	<string>com.googleusercontent.apps.908122768990-n34r7nfcrf500hbrpeiiso70viijleed</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBTvqNoUvOdIjvO6EI9ZG8ZpkZc2B-2CDA</string>
+	<string>AIzaSyCDnyp1qCNZPx11705VqlekDB6IqozjKN8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>986832910842</string>
+	<string>908122768990</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.NA.NoteTours</string>
 	<key>PROJECT_ID</key>
-	<string>fir-project-b6ec4</string>
+	<string>notetour-211fa</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fir-project-b6ec4.appspot.com</string>
+	<string>notetour-211fa.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:986832910842:ios:c14df271d675b8ba</string>
+	<string>1:908122768990:ios:c14df271d675b8ba</string>
 	<key>DATABASE_URL</key>
-	<string>https://fir-project-b6ec4.firebaseio.com</string>
+	<string>https://notetour-211fa.firebaseio.com</string>
 </dict>
 </plist>

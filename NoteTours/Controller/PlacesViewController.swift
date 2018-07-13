@@ -1,5 +1,5 @@
 //
-//  PlacesViewController.swift
+//  ContentPlacesViewController.swift
 //  NoteTours
 //
 //  Created by NgọcAnh on 7/10/18.
@@ -8,39 +8,57 @@
 
 import UIKit
 
-class PlacesViewController: UIViewController {
-
+class PlacesViewController: UITableViewController {
+    
+    var key: String!
+    var placesData: [Places] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+     
+        if key != nil {
+            DataService.shared.getPlacesFirst(key: key, complete: { [unowned self] (placesFirst) in
+                self.placesData = placesFirst
+                self.tableView.reloadData()
+            })
+        }
+        
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Table view data source
+    
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        //        return DataService.shared.placesFirst.count
+        return placesData.count
     }
-    */
-    @IBAction func nother(_ sender: Any){
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PlacesCell
+        cell.nameLabel.text = placesData[indexPath.row].name
+        cell.contentLabel.text = placesData[indexPath.row].content
         
-    }
-    @IBAction func mientrung(_ sender:Any){
         
+        return cell
     }
-    @IBAction func mientnam(_ sender:Any){
-        
-    }
-    @IBAction func mientay(_ sender: Any){
-        
-    }
+    
+     // MARK: - Navigation
+     
+   
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      let contentViewController = segue.destination as? ContentController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            contentViewController?.places = placesData[indexPath.row]
+            
+        }
+     }
+    
+    
 }
+

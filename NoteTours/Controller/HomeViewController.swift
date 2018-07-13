@@ -65,7 +65,7 @@ class HomeViewController: UIViewController {
                             UserDefaults.standard.set(email, forKey: "email")
                             UserDefaults.standard.set(name, forKey: "name")
                             UserDefaults.standard.set(url, forKey: "url")
-                            UserDefaults.standard.set(false, forKey: "FirstLogin")
+                            UserDefaults.standard.set(true, forKey: "FirstLogin")
                             self.loadViewController()
                         }
                     }

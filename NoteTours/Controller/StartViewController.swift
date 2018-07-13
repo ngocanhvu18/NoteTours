@@ -14,7 +14,7 @@ class StartViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.pageControl.currentPage = 0
+        pageControl.currentPage = 0
     }
      //page Control
     

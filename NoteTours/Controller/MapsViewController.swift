@@ -15,6 +15,7 @@ typealias DICT = Dictionary<AnyHashable, Any>
 class MapsViewController: UIViewController, AutoCompleteControllerDelegate {
     
     
+    
     @IBOutlet weak var goTextField: UITextField!
     @IBOutlet weak var goButton: UIButton!
     
@@ -43,9 +44,9 @@ class MapsViewController: UIViewController, AutoCompleteControllerDelegate {
     var source: GMSPlace?
     var destination: GMSPlace?
     var checkIdentifer: Bool = true
-    
+ 
     // Edit View Menu
-    var isOpenSliderMenu: Bool = false {
+    var isOpenSliderMenu: Bool = true {
         didSet {
             topContrainSliderMenu.constant = isOpenSliderMenu ? 0 : -(UIScreen.main.bounds.height * 1/5 + 20)
             UIView.animate(withDuration: 0.35) {
@@ -61,9 +62,9 @@ class MapsViewController: UIViewController, AutoCompleteControllerDelegate {
         mapsView.isMyLocationEnabled = true
         placesClient = GMSPlacesClient.shared()
         
-        
+       
         // Clik View Menu
-        topContrainSliderMenu.constant = -(UIScreen.main.bounds.height * 1/5 + 20)
+//        topContrainSliderMenu.constant = -(UIScreen.main.bounds.height * 1/5 + 20)
     }
     
     override func didReceiveMemoryWarning() {
@@ -121,38 +122,38 @@ class MapsViewController: UIViewController, AutoCompleteControllerDelegate {
     }
     // gan du lieu
     func passingData(place: GMSPlace) {
-        if checkIdentifer == true {
-            source = place
-            goTextField.text = "\(place.formattedAddress ?? "")"
-            
-        } else {
-            destination = place
-            toTextField.text = "\(place.formattedAddress ?? "")"
-            
-        }
-        
-        let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15)
-        
-        mapsView.camera = camera
-        mapsView.clear()
-        if source != nil && destination != nil {
-            let markerSource = GMSMarker()
-            markerSource.position = CLLocationCoordinate2D(latitude: (source?.coordinate.latitude)!, longitude: (source?.coordinate.longitude)!)
-            markerSource.icon = #imageLiteral(resourceName: "icons8-location_filled copy")
-            markerSource.title = source?.name
-            markerSource.snippet = source?.formattedAddress ?? ""
-            markerSource.map = mapsView
-            
-            let markerDestination = GMSMarker()
-            markerDestination.position = CLLocationCoordinate2D(latitude: (destination?.coordinate.latitude)!, longitude: (destination?.coordinate.longitude)!)
-            markerDestination.icon = #imageLiteral(resourceName: "icons8-location_filled copy")
-            markerDestination.title = destination?.name
-            markerDestination.snippet = source?.formattedAddress ?? ""
-            markerDestination.map = mapsView
-            
-            locationData()
-            
-        }
+//        if checkIdentifer == true {
+//            source = place
+//            goTextField.text = "\(place.formattedAddress ?? "")"
+//
+//        } else {
+//            destination = place
+//            toTextField.text = "\(place.formattedAddress ?? "")"
+//
+//        }
+//
+//        let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15)
+//
+//        mapsView.camera = camera
+//        mapsView.clear()
+//        if source != nil && destination != nil {
+//            let markerSource = GMSMarker()
+//            markerSource.position = CLLocationCoordinate2D(latitude: (source?.coordinate.latitude)!, longitude: (source?.coordinate.longitude)!)
+//            markerSource.icon = #imageLiteral(resourceName: "icons8-location_filled copy")
+//            markerSource.title = source?.name
+//            markerSource.snippet = source?.formattedAddress ?? ""
+//            markerSource.map = mapsView
+//
+//            let markerDestination = GMSMarker()
+//            markerDestination.position = CLLocationCoordinate2D(latitude: (destination?.coordinate.latitude)!, longitude: (destination?.coordinate.longitude)!)
+//            markerDestination.icon = #imageLiteral(resourceName: "icons8-location_filled copy")
+//            markerDestination.title = destination?.name
+//            markerDestination.snippet = source?.formattedAddress ?? ""
+//            markerDestination.map = mapsView
+//
+//            locationData()
+//
+//        }
     }
     // truyen du lieu
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -194,16 +195,16 @@ extension MapsViewController: CLLocationManagerDelegate {
         marker.map = mapsView
         return marker
     }
-    func markerdestination(coordinate: CLLocationCoordinate2D) -> GMSMarker {
-        mapsView.clear()
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        marker.title = destination?.name
-        marker.snippet = destination?.formattedAddress ?? ""
-        marker.map = mapsView
-        return marker
-        
-    }
+//    func markerdestination(coordinate: CLLocationCoordinate2D) -> GMSMarker {
+//        mapsView.clear()
+//        let marker = GMSMarker()
+//        marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+//        marker.title = destination?.name
+//        marker.snippet = destination?.formattedAddress ?? ""
+//        marker.map = mapsView
+//        return marker
+//
+//    }
     
     
 }

@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "icons8-people_in_car_side_view_filled.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icons8-location_filled.png",
       "scale" : "2x"
     },
     {

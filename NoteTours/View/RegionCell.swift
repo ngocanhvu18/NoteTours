@@ -1,16 +1,14 @@
 //
-//  CustumViewCell.swift
+//  RegionCell.swift
 //  NoteTours
 //
-//  Created by NgọcAnh on 7/10/18.
+//  Created by NgọcAnh on 7/11/18.
 //  Copyright © 2018 Ngọc Anh. All rights reserved.
 //
 
 import UIKit
 
-class CustumViewCell: UITableViewCell {
-   
-    @IBOutlet weak var contentLabel: UILabel!
+class RegionCell: UITableViewCell {
     
     @IBOutlet weak var labelText: UILabel!
     @IBOutlet weak var photoView: UIImageView!
