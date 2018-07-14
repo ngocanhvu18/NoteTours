@@ -23,13 +23,13 @@
 		2F73962120F45B0E001671DD /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F73962020F45B0E001671DD /* Places.swift */; };
 		2FA02FB320F6FF0700033ED0 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA02FB220F6FF0700033ED0 /* RegisterController.swift */; };
 		2FA6F1C920E769AF0076928D /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA6F1C820E769AF0076928D /* UIView+Extentions.swift */; };
-		2FB94C6020F76DA500E2B18C /* AutoCompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB94C5F20F76DA400E2B18C /* AutoCompleteController.swift */; };
 		2FC7BB3F20F5A48A00CDCD14 /* RegionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7BB3E20F5A48A00CDCD14 /* RegionCell.swift */; };
 		2FC7BB4120F5B3F500CDCD14 /* PlacesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7BB4020F5B3F500CDCD14 /* PlacesCell.swift */; };
 		2FC90F1820E6444B00C29A01 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC90F1720E6444B00C29A01 /* HomeViewController.swift */; };
 		2FDCEB9C20F49A7D00BED66D /* RegionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDCEB9B20F49A7D00BED66D /* RegionsViewController.swift */; };
 		2FDCEB9E20F49CF700BED66D /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDCEB9D20F49CF700BED66D /* PlacesViewController.swift */; };
 		2FE3281920EE135B004577AE /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3281820EE135B004577AE /* MapsViewController.swift */; };
+		2FEB630620F9A3FE005800F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB630520F9A3FE005800F0 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,13 +50,13 @@
 		2F73962020F45B0E001671DD /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		2FA02FB220F6FF0700033ED0 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		2FA6F1C820E769AF0076928D /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
-		2FB94C5F20F76DA400E2B18C /* AutoCompleteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteController.swift; sourceTree = "<group>"; };
 		2FC7BB3E20F5A48A00CDCD14 /* RegionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCell.swift; sourceTree = "<group>"; };
 		2FC7BB4020F5B3F500CDCD14 /* PlacesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCell.swift; sourceTree = "<group>"; };
 		2FC90F1720E6444B00C29A01 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2FDCEB9B20F49A7D00BED66D /* RegionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsViewController.swift; sourceTree = "<group>"; };
 		2FDCEB9D20F49CF700BED66D /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		2FE3281820EE135B004577AE /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
+		2FEB630520F9A3FE005800F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2FF84AF220EB166100884ED2 /* NoteTours.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoteTours.entitlements; sourceTree = "<group>"; };
 		62EDEAC1FEA62A9A1F4B8B0E /* Pods-NoteTours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteTours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteTours/Pods-NoteTours.debug.xcconfig"; sourceTree = "<group>"; };
 		A4FC33150007E83477C9149F /* Pods-NoteTours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteTours.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteTours/Pods-NoteTours.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 				2F296BEB20ECC72400FE90C1 /* TabBarViewController.swift */,
 				2FE3281820EE135B004577AE /* MapsViewController.swift */,
 				2FA02FB220F6FF0700033ED0 /* RegisterController.swift */,
-				2FB94C5F20F76DA400E2B18C /* AutoCompleteController.swift */,
+				2FEB630520F9A3FE005800F0 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -357,9 +357,9 @@
 				2FC7BB3F20F5A48A00CDCD14 /* RegionCell.swift in Sources */,
 				2FA6F1C920E769AF0076928D /* UIView+Extentions.swift in Sources */,
 				2F681F4720E4C67A001F78C9 /* AppDelegate.swift in Sources */,
-				2FB94C6020F76DA500E2B18C /* AutoCompleteController.swift in Sources */,
 				2F296BEC20ECC72400FE90C1 /* TabBarViewController.swift in Sources */,
 				2F73962120F45B0E001671DD /* Places.swift in Sources */,
+				2FEB630620F9A3FE005800F0 /* ViewController.swift in Sources */,
 				2F1E277720ECCA0A00F68793 /* StartViewController.swift in Sources */,
 				2F681F5B20E4CC6E001F78C9 /* PlistServices.swift in Sources */,
 				2FC90F1820E6444B00C29A01 /* HomeViewController.swift in Sources */,
@@ -506,7 +506,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NoteTours/NoteTours.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z86K4NCSAW;
 				INFOPLIST_FILE = NoteTours/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -524,7 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NoteTours/NoteTours.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z86K4NCSAW;
 				INFOPLIST_FILE = NoteTours/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

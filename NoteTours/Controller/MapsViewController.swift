@@ -12,9 +12,7 @@ import GoogleMaps
 import CoreLocation
 typealias DICT = Dictionary<AnyHashable, Any>
 
-class MapsViewController: UIViewController, AutoCompleteControllerDelegate {
-    
-    
+class MapsViewController: UIViewController {
     
     @IBOutlet weak var goTextField: UITextField!
     @IBOutlet weak var goButton: UIButton!
@@ -37,12 +35,15 @@ class MapsViewController: UIViewController, AutoCompleteControllerDelegate {
         }
         return locationManager
     }()
+    
     var currentLocation: CLLocation?
     var placesClient: GMSPlacesClient!
+    var placesClient2: GMSPlacesClient!
+    
     var zoomLevel: Float = 15.0
     var marker: GMSMarker!
+    var myLocation: CLLocation?
     var source: GMSPlace?
-    var destination: GMSPlace?
     var checkIdentifer: Bool = true
  
     // Edit View Menu
@@ -54,6 +55,7 @@ class MapsViewController: UIViewController, AutoCompleteControllerDelegate {
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -61,10 +63,16 @@ class MapsViewController: UIViewController, AutoCompleteControllerDelegate {
         mapsView.settings.compassButton = true
         mapsView.isMyLocationEnabled = true
         placesClient = GMSPlacesClient.shared()
-        
+        placesClient2 = GMSPlacesClient()
+         placeAutocomplete()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        myLocation = mapsView.myLocation
        
-        // Clik View Menu
-//        topContrainSliderMenu.constant = -(UIScreen.main.bounds.height * 1/5 + 20)
+        print(myLocation?.coordinate)
+        locationData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,10 +83,44 @@ class MapsViewController: UIViewController, AutoCompleteControllerDelegate {
     @IBAction func clickMenu(_ sender: Any) {
         isOpenSliderMenu = !isOpenSliderMenu
     }
+    // hien thi vi toaj do diem den
+    func placeAutocomplete() {
+        let filter = GMSAutocompleteFilter()
+        filter.type = .establishment
+        placesClient2.autocompleteQuery("Mộc Châu (Sơn La)", bounds: nil, filter: filter, callback: {(results, error) -> Void in
+            if let error = error {
+                print("Autocomplete error \(error)")
+                return
+            }
+            if let results = results {
+                if let placeID = results[0].placeID {
+                    self.placesClient2.lookUpPlaceID(placeID, callback: { (place, error) -> Void in
+                        if let error = error {
+                            print("lookup place id query error: \(error.localizedDescription)")
+                            return
+                        }
+                        
+                        guard let place = place else {
+                            print("No place details for \(placeID)")
+                            return
+                        }
+                        self.source = place
+                        print("Place name \(place.name)")
+                        print("Place address \(place.coordinate)")
+                    })
+                }
+            }
+            
+        })
+    }
+    
+
     //MARK: POLYLINE
     // du lieu vi tri
     func locationData(){
-        getPolylineRoute(from: source!.coordinate, to: destination!.coordinate)
+        print(myLocation?.coordinate)
+        print(source?.coordinate)
+        getPolylineRoute(from: myLocation!.coordinate, to: source!.coordinate)
     }
     // truyen vi  tri len Service
     func getPolylineRoute(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D){
@@ -120,81 +162,65 @@ class MapsViewController: UIViewController, AutoCompleteControllerDelegate {
         self.mapsView.animate(with: cameraUpdat)
         isOpenSliderMenu = !isOpenSliderMenu
     }
-    // gan du lieu
-    func passingData(place: GMSPlace) {
-//        if checkIdentifer == true {
-//            source = place
-//            goTextField.text = "\(place.formattedAddress ?? "")"
-//
-//        } else {
-//            destination = place
-//            toTextField.text = "\(place.formattedAddress ?? "")"
-//
-//        }
-//
-//        let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15)
-//
-//        mapsView.camera = camera
-//        mapsView.clear()
-//        if source != nil && destination != nil {
-//            let markerSource = GMSMarker()
-//            markerSource.position = CLLocationCoordinate2D(latitude: (source?.coordinate.latitude)!, longitude: (source?.coordinate.longitude)!)
-//            markerSource.icon = #imageLiteral(resourceName: "icons8-location_filled copy")
-//            markerSource.title = source?.name
-//            markerSource.snippet = source?.formattedAddress ?? ""
-//            markerSource.map = mapsView
-//
-//            let markerDestination = GMSMarker()
-//            markerDestination.position = CLLocationCoordinate2D(latitude: (destination?.coordinate.latitude)!, longitude: (destination?.coordinate.longitude)!)
-//            markerDestination.icon = #imageLiteral(resourceName: "icons8-location_filled copy")
-//            markerDestination.title = destination?.name
-//            markerDestination.snippet = source?.formattedAddress ?? ""
-//            markerDestination.map = mapsView
-//
-//            locationData()
-//
-//        }
-    }
-    // truyen du lieu
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        checkIdentifer = segue.identifier == "goAdd"
-        let nextViewController = segue.destination as? AutoCompleteController
-        nextViewController?.delegate = self
-    }
+    
+    
 }
+
 
 extension MapsViewController: CLLocationManagerDelegate {
     // xu ly vi tri
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location: CLLocation =  locations.last!
+        let location: CLLocation = locations.last!
+        print("Location :\(location)")
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: zoomLevel)
-        
-        
-        
-        // danh dau vi tri
-        
         marker = nil
-        mapsView.clear()
-        
         if mapsView.isHidden {
             mapsView.isHidden = false
             mapsView.camera = camera
         } else {
             mapsView.animate(to: camera)
         }
-        
     }
     
-    // Marker 2 vi tri
-    func markerSource(coordinate: CLLocationCoordinate2D) -> GMSMarker {
-        mapsView.clear()
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        marker.title = source?.name
-        marker.snippet = source?.formattedAddress ?? ""
-        marker.map = mapsView
-        return marker
+    
+    // Handle authorization for the location manager.
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .restricted:
+            print("Location access was restricted")
+        case .denied:
+            print("User denied access to location")
+            // Display the map using the default location.
+            mapsView.isHidden = false
+        case .notDetermined:
+            print("Location status not determined")
+        case .authorizedAlways: fallthrough
+        case .authorizedWhenInUse:
+            print("Location status is OK")
+        }
     }
+    
+    // Handle location manager errors.
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        locationManager.stopUpdatingLocation()
+        print("Error: \(error)")
+    }
+}
+    
+    
+//extension MapsViewController {
+//
+//    // Marker 2 vi tri
+//    func markerSource(coordinate: CLLocationCoordinate2D) -> GMSMarker {
+//        mapsView.clear()
+//        let marker = GMSMarker()
+//        marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+//        marker.title = source?.name
+//        marker.snippet = source?.formattedAddress ?? ""
+//        marker.map = mapsView
+//        return marker
+//    }
+//
 //    func markerdestination(coordinate: CLLocationCoordinate2D) -> GMSMarker {
 //        mapsView.clear()
 //        let marker = GMSMarker()
@@ -205,6 +231,6 @@ extension MapsViewController: CLLocationManagerDelegate {
 //        return marker
 //
 //    }
-    
-    
-}
+//}
+
+// "https://maps.googleapis.com/maps/api/directions/json?origin=21.032461191487627,105.76515889786882&destination=37.393179400000001,-122.07787610000001&sensor=false&mode=driving"

@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey("AIzaSyD0tsWR_3yPLLQyV9K2fZPqx0TdrgHIZuA")
-        GMSPlacesClient.provideAPIKey("AIzaSyD0tsWR_3yPLLQyV9K2fZPqx0TdrgHIZuA")
+        GMSServices.provideAPIKey("AIzaSyAgpPduASHk1UcQQOf2JkVWNMG0uWOEqhs")
+        GMSPlacesClient.provideAPIKey("AIzaSyAgpPduASHk1UcQQOf2JkVWNMG0uWOEqhs")
         FirebaseApp.configure()
         
         if UserDefaults.standard.object(forKey: "FirstLogin") == nil {
