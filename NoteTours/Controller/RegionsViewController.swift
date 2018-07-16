@@ -18,9 +18,17 @@ class RegionsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+      
     }
     
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer =  UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

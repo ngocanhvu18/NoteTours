@@ -21,8 +21,16 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         
-        // Do any additional setup after loading the view.
+    }
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer =  UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,6 +54,10 @@ class HomeViewController: UIViewController {
         
     }
     
+  
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("End")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

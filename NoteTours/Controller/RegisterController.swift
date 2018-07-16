@@ -24,7 +24,15 @@ class RegisterController: UIViewController{
         dateText.text = UserDefaults.standard.object(forKey: "ngaysinh") as? String
         emailText.text = UserDefaults.standard.object(forKey: "email") as? String
         passText.text = UserDefaults.standard.object(forKey: "pass") as? String
-        
+        hideKeyboardWhenTappedAround()
+    }
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer =  UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
